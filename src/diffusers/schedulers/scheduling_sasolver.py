@@ -963,7 +963,7 @@ class SASolverScheduler(SchedulerMixin, ConfigMixin):
             order (`int`):
                 The order of SA-Predictor at this timestep.
             tau (`torch.Tensor`):
-                The stochasticity coefficient $\tau$ at the current step.
+                The stochasticity coefficient tau at the current step.
 
         Returns:
             `torch.Tensor`:
