@@ -768,7 +768,7 @@ class SASolverScheduler(SchedulerMixin, ConfigMixin):
                 / ((1 + tau**2) ** 4)
             )
 
-    def lagrange_polynomial_coefficient(self, order: int, lambda_list: List[torch.Tensor]) -> List[List[float]]:
+    def lagrange_polynomial_coefficient(self, order: int, lambda_list: List[torch.Tensor]) -> List[List[torch.Tensor]]:
         r"""
         Compute the coefficients of the Lagrange polynomial of order `order` that interpolates the points $(x_i, y_i) =
         (\lambda_i, i)$ for $i \in [0, order]`. The returned coefficients describe the polynomial in its expanded form
