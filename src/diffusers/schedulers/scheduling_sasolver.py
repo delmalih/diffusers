@@ -782,7 +782,7 @@ class SASolverScheduler(SchedulerMixin, ConfigMixin):
                 satisfy `len(lambda_list) == order + 1`.
 
         Returns:
-            `List[List[float]]`:
+            `List[List[torch.Tensor]]`:
                 A list of `order + 1` coefficient lists — one for each output channel — where each inner list contains
                 the polynomial coefficients $c_0, c_1, \ldots, c_{order}$.
         """
