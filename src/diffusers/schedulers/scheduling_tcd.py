@@ -66,7 +66,7 @@ def betas_for_alpha_bar(
             The number of betas to produce.
         max_beta (`float`, defaults to `0.999`):
             The maximum beta to use; use values lower than 1 to avoid numerical instability.
-        alpha_transform_type (`Literal["cosine", "exp", "laplace"]`, defaults to `"cosine"`):
+        alpha_transform_type (`str`, defaults to `"cosine"`):
             The type of noise schedule for `alpha_bar`. Choose from `cosine`, `exp`, or `laplace`.
 
     Returns:
@@ -787,12 +787,12 @@ class TCDScheduler(SchedulerMixin, ConfigMixin):
         return self.config.num_train_timesteps
 
     # Copied from diffusers.schedulers.scheduling_ddpm.DDPMScheduler.previous_timestep
-    def previous_timestep(self, timestep: int | torch.Tensor) -> int | torch.Tensor:
+    def previous_timestep(self, timestep: int) -> int | torch.Tensor:
         """
         Compute the previous timestep in the diffusion chain.
 
         Args:
-            timestep (`int` or `torch.Tensor`):
+            timestep (`int`):
                 The current timestep.
 
         Returns:
